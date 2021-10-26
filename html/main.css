@@ -1,0 +1,92 @@
+/* font-family: 'Open Sans', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    /* width: 100vw;
+    height: 100vh; */
+    margin: 0;
+    color: #edecea;
+    background-color: #171d20;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* .slides {
+} */
+
+.slide {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100vw;
+    height: 100vh;
+    padding: 4rem;
+}
+
+.slide .middle {
+    display: flex;
+    justify-content: space-evenly;
+    align-self: center;
+    width: 100%;
+}
+
+.slide .left,
+.slide .right {
+    max-width: 40%;
+}
+
+.slide h1 {
+    margin: 0 0 2rem;
+    font-size: 3rem;
+    color: #F4780C;
+}
+
+.slide h2 {
+    margin: 0 0 2rem;
+    font-size: 2rem;
+    color: #db257a;
+}
+
+.slide.title {
+    width: 80%;
+    margin-left: 20%;
+    padding: 0 20% 0 5%;
+    background-color: #251a5b;
+    color: #eae2b7;
+}
+
+.slide.title h1 {
+    margin: 0;
+    /* padding-top: 2rem;
+    border-top: 4px solid #eae2b7; */
+    font-size: 4rem;
+    line-height: 1.2em;
+}
+
+.slide.title h2 {
+    margin-top: 1rem;
+    /* padding-bottom: 2rem;
+    border-bottom: 4px solid #eae2b7; */
+    font-size: 3rem;
+}
+
+.field {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0.2rem 0.2rem 0.1rem #00000055;
+    background-color: #1e2529;
+}
+
+.slide .field {
+    margin: 2rem 0;
+}
+
+.slide .field input {
+    min-width: 260px;
+}
