@@ -187,10 +187,12 @@ function main() {
     // Slider de velocidade de animação.
     onInput("input-wheel-frequency", function() {
         colorWheelScene.rectangle.frequency = this.value / 10
+        $("wheel-frequency").textContent = this.value / 10
     })
     // Slider de saturação.
     onInput("input-wheel-saturation", function() {
         colorWheelScene.rectangle.saturation = this.value / 100
+        $("wheel-saturation").textContent = this.value
     })
 
     colorWheelScene.start()
