@@ -27,6 +27,11 @@ export class FullRectangle extends RenderObject {
          * Frequência da animação (Ex: 0.2 = 1/5 = um ciclo a cada 5 segundos).
          */
         this.frequency = 0.2
+
+        /**
+         * Saturação das cores.
+         */
+        this.saturation = 1
     }
 
     async load() {
@@ -36,6 +41,11 @@ export class FullRectangle extends RenderObject {
          * Frequência de animação.
          */
         this.uniforms.frequency = this.shader.getUniformLocation("frequency")
+
+        /**
+         * Saturação das cores.
+         */
+        this.uniforms.saturation = this.shader.getUniformLocation("saturation")
     }
 
     setShaderParams() {
@@ -43,7 +53,10 @@ export class FullRectangle extends RenderObject {
 
         super.setShaderParams()
 
+        // Atribui valor dos uniformes.
         // Frequência de animação.
         gl.uniform1f(this.uniforms.frequency, this.frequency)
+        // Saturação das cores.
+        gl.uniform1f(this.uniforms.saturation, this.saturation)
     }
 }

@@ -10,38 +10,123 @@
 </head>
 <body>
     <article class="slides">
-        <!-- <section class="slide title">
-            <div>
-                <h1>Cor e suas aplicações na computação gráfica:</h1>
-                <h2>uma visão top-down</h2>
-
-                <ul>
-                    <li>Cristopher Felipe Pinheiro</li>
-                    <li>Wellington Lucas F. Morales</li>
-                    <li>Pedro Henrique Araujo dos Reis</li>
-                    <li>João Paulo da Silva</li>
-                    <li>Jose Yan Goncalves Lipu</li>
-                    <li>Otavio Augusto Paganotti Messias da Silva</li>
-                </ul>
+        <section class="slide title">
+            <div class="middle rows">
+                <h1>Cor e suas aplicações na computação gráfica</h1>
+                <h2>Exemplos práticos</h2>
             </div>
-        </section> -->
+        </section>
 
         <section class="slide">
-            <div class="middle">
-                <div class="left">
-                    <h1>Animação</h1>
-                    <h2>Roda de Cores</h2>
+            <div class="rows middle">
+                <h1>Conversão de cores</h1>
 
-                    <p>Conteúdo descrevendo o processo de animação.</p>
+                <div class="columns">
+                    <div class="panel rows">
+                        <h3>RGBA <span id="output-rgb">[0, 0, 0]</span></h3>
+
+                        <div class="field">
+                            <label for="input-red">R</label>
+                            <input type="range" min="0" max="255" value="255" id="input-red">
+                        </div>
+                        <div class="field">
+                            <label for="input-green">G</label>
+                            <input type="range" min="0" max="255" value="255" id="input-green">
+                        </div>
+                        <div class="field">
+                            <label for="input-blue">B</label>
+                            <input type="range" min="0" max="255" value="255" id="input-blue">
+                        </div>
+                        <div class="field field-2">
+                            <label for="input-alpha">A</label>
+                            <input type="range" min="0" max="255" value="255" id="input-alpha">
+                        </div>
+                    </div>
+
+                    <div class="panel rows">
+                        <h3>CMYK <span id="output-cmyk">[0, 0, 0, 0]</span></h3>
+
+                        <div class="field">
+                            <label for="input-cyan">C</label>
+                            <input type="range" min="0" max="100" value="0" id="input-cyan">
+                        </div>
+                        <div class="field">
+                            <label for="input-magenta">M</label>
+                            <input type="range" min="0" max="100" value="0" id="input-magenta">
+                        </div>
+                        <div class="field">
+                            <label for="input-yellow">Y</label>
+                            <input type="range" min="0" max="100" value="0" id="input-yellow">
+                        </div>
+                        <div class="field">
+                            <label for="input-black">K</label>
+                            <input type="range" min="0" max="100" value="0" id="input-black">
+                        </div>
+                    </div>
+
+                    <div class="panel rows">
+                        <h3>HSL <span id="output-hsl">[0, 0, 0]</span></h3>
+
+                        <div class="field">
+                            <label for="input-hue">H</label>
+                            <input type="range" min="0" max="359" value="0" id="input-hue">
+                        </div>
+                        <div class="field">
+                            <label for="input-saturation">S</label>
+                            <input type="range" min="0" max="100" value="0" id="input-saturation">
+                        </div>
+                        <div class="field">
+                            <label for="input-lightness">L</label>
+                            <input type="range" min="0" max="100" value="0" id="input-lightness">
+                        </div>
+                    </div>
+
+                    <div class="panel rows">
+                        <h3><span id="output-hex">#FFFFFF</span></h3>
+
+                        <div id="result-color" style="background-color: #ccc;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="slide">
+            <div class="wide columns middle">
+                <div class="rows middle">
+                    <h1>Vertex Colors</h1>
+                    <h2>WebGL</h2>
+
+                    <p>Utiliza a tag <code>&lt;canvas&gt;</code> para renderizar com <strong>OpenGL</strong> dentro do navegador, através de shaders.</p>
+                </div>
+
+                <div>
+                    <canvas id="canvas-triangle" width="600" height="600"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section class="slide">
+            <div class="wide columns middle">
+                <div class="rows">
+                    <h1>Animação</h1>
+                    <h2>WebGL</h2>
+
+                    <p>Utiliza variáveis <code>uniform</code> para atualizar parâmetros do shader em tempo real.</p>
 
                     <div class="field">
-                        <label for="input-frequency">Velocidade</label>
-                        <input type="range" min="0" max="20" value="2" id="input-frequency">
+                        <label for="input-wheel-frequency">Velocidade</label>
+                        <input class="wide" type="range" min="0" max="20" value="2" id="input-wheel-frequency">
+                    </div>
+
+                    <div class="field">
+                        <label for="input-wheel-saturation">Saturação</label>
+                        <input class="wide" type="range" min="0" max="200" value="100" id="input-wheel-saturation">
                     </div>
                 </div>
 
-                <div class="right">
-                    <canvas id="gl-canvas-1" width="400" height="400"></canvas>
+                <div>
+                    <canvas id="canvas-color-wheel" width="400" height="400"></canvas>
                 </div>
             </div>
         </section>

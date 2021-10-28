@@ -23,6 +23,8 @@ uniform vec2 uResolution;
 uniform float uTime;
 // Frequência da animação (Ex: 0.2 = 1/5 = um ciclo a cada 5 segundos).
 uniform float frequency;
+// Saturação das cores.
+uniform float saturation;
 
 // Constante matemática PI.
 const float PI = 3.14159265358979323846264;
@@ -56,7 +58,7 @@ void main() {
     float dist = sqrt(uvc.x * uvc.x + uvc.y * uvc.y);
 
     // Usa ângulo como matiz da cor, e distância como brilho.
-    vec3 hsvColor = vec3(ang, 1.0, dist);
+    vec3 hsvColor = vec3(ang, saturation, dist);
     // Converte em RGB.
     vec3 rgbColor = hsvToRgb(hsvColor);
 

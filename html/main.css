@@ -1,21 +1,53 @@
-/* font-family: 'Open Sans', sans-serif; */
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Roboto+Mono:wght@400;700&display=swap');
 
 * {
     box-sizing: border-box;
 }
 
 body {
-    /* width: 100vw;
-    height: 100vh; */
     margin: 0;
     color: #edecea;
     background-color: #171d20;
     font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
 }
 
-/* .slides {
-} */
+code {
+    color:#6fffe9;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.wide {
+    width: 100%;
+}
+
+.middle {
+    display: flex;
+    align-self: center;
+    /* width: 100%; */
+}
+
+.rows {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    /* justify-content: space-evenly; */
+}
+
+.columns {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 2rem;
+    justify-content: space-evenly;
+}
+
+.slides {
+    overflow-x: hidden;
+    width: 100vw;
+    height: 100vh;
+    scroll-snap-type: y mandatory;
+}
 
 .slide {
     display: flex;
@@ -23,30 +55,23 @@ body {
     width: 100vw;
     height: 100vh;
     padding: 4rem;
-}
-
-.slide .middle {
-    display: flex;
-    justify-content: space-evenly;
-    align-self: center;
-    width: 100%;
-}
-
-.slide .left,
-.slide .right {
-    max-width: 40%;
+    scroll-snap-align: start;
 }
 
 .slide h1 {
-    margin: 0 0 2rem;
+    margin: 0 0 1rem 0;
     font-size: 3rem;
     color: #F4780C;
 }
 
 .slide h2 {
-    margin: 0 0 2rem;
+    margin: 0 0 1rem 0;
     font-size: 2rem;
     color: #db257a;
+}
+
+.slide h3 {
+    margin: 0 0 1rem 0;
 }
 
 .slide.title {
@@ -54,25 +79,32 @@ body {
     margin-left: 20%;
     padding: 0 20% 0 5%;
     background-color: #251a5b;
-    color: #eae2b7;
 }
 
 .slide.title h1 {
     margin: 0;
-    /* padding-top: 2rem;
-    border-top: 4px solid #eae2b7; */
     font-size: 4rem;
-    line-height: 1.2em;
+    color: #eae2b7;
 }
 
 .slide.title h2 {
     margin-top: 1rem;
-    /* padding-bottom: 2rem;
-    border-bottom: 4px solid #eae2b7; */
     font-size: 3rem;
 }
 
+.panel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* gap: 2rem; */
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0.2rem 0.2rem 0.1rem #00000055;
+    background-color: #101416;
+}
+
 .field {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -83,10 +115,19 @@ body {
     background-color: #1e2529;
 }
 
-.slide .field {
-    margin: 2rem 0;
+.field-2 {
+    background-color: #281e29;
 }
 
-.slide .field input {
+input.wide {
     min-width: 260px;
+}
+
+#output-hex {
+    text-transform: uppercase;
+}
+
+#result-color {
+    width: 200px;
+    height: 200px;
 }
