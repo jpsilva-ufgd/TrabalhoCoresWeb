@@ -17,6 +17,8 @@ in vec4 vertexColor;
 out vec4 outColor;
 
 // Uniforms: constantes compartilhadas por todos os pixels.
+// Resolução da tela (XY, quantidade de pixels).
+uniform vec2 uResolution;
 // Tempo de execução do programa.
 uniform float uTime;
 
